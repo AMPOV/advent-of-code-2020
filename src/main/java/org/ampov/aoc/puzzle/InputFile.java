@@ -1,4 +1,4 @@
-package org.ampov.aoc;
+package org.ampov.aoc.puzzle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
