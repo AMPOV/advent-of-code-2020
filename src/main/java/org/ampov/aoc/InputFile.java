@@ -14,7 +14,7 @@ public class InputFile {
 	public InputFile(String name) {
 		lines = new ArrayList<>();
 		try (BufferedReader br = new BufferedReader(
-				new InputStreamReader(Day1.class.getClassLoader().getResourceAsStream(name)))) {
+				new InputStreamReader(InputFile.class.getClassLoader().getResourceAsStream(name)))) {
 			String line;
 			while ((line = br.readLine()) != null) 
 				lines.add(line);
@@ -32,5 +32,11 @@ public class InputFile {
 				.stream()
 				.map(Integer::parseInt)
 				.collect(Collectors.toList());
+	}
+	
+	public void print() {
+		lines
+			.stream()
+			.forEach(System.out::println);
 	}
 }

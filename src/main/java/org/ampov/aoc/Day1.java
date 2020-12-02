@@ -28,6 +28,4 @@ public class Day1 {
 		}
 		return getProduct(input.subList(1, input.size()), factor1);
 	}
-	
-
 }
