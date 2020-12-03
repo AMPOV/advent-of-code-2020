@@ -7,8 +7,8 @@ public abstract class AbstractPuzzle {
 	protected Object solutionPart1;
 	protected Object solutionPart2;
 	
-	@Override 
+	@Override
 	public String toString() {
-		return this.getClass().getSimpleName() + "[Part1: " + solutionPart1 + ", Part2: " + solutionPart2 + "]";
+		return String.format("%s [Part1=%s, Part2=%s]", this.getClass().getSimpleName(), solutionPart1, solutionPart2);
 	}
 }

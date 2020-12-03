@@ -1,11 +1,9 @@
 package org.ampov.aoc;
 
-import java.util.HashSet;
+import java.time.LocalDate;
+import java.util.LinkedHashSet;
 import java.util.Set;
-
-import org.ampov.aoc.puzzle.AbstractPuzzle;
-import org.ampov.aoc.puzzle.Day1;
-import org.ampov.aoc.puzzle.Day2;
+import org.ampov.aoc.puzzle.*;
 
 public class AdventOfCode {
 	
@@ -13,11 +11,12 @@ public class AdventOfCode {
 		new AdventOfCode().printSolutions();
 	}
 	
-	private Set<AbstractPuzzle> puzzles = new HashSet<>(24);
+	private Set<AbstractPuzzle> puzzles = new LinkedHashSet<>(LocalDate.now().getDayOfMonth());
 	
 	public AdventOfCode() {
 		puzzles.add(new Day1());
 		puzzles.add(new Day2());
+		puzzles.add(new Day3());
 	}
 	
 	private void printSolutions() {
@@ -25,4 +24,5 @@ public class AdventOfCode {
 			.stream()
 			.forEach(System.out::println);
 	}
+
 }
