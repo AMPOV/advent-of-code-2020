@@ -7,11 +7,11 @@ public class Day3 extends AbstractPuzzle {
 	private List<String> input = inputFile.getLines();
 
 	public Day3() {
-		solutionPart1 = new Route(3, 1).trees;
-
-		solutionPart2 = 
+		long trees = new Route(3, 1).trees;
+		
+		solutionPart1 = trees;
+		solutionPart2 = trees *
 				new Route(1, 1).trees *
-				new Route(3, 1).trees *
 				new Route(5, 1).trees *
 				new Route(7, 1).trees *
 				new Route(1, 2).trees;
@@ -25,10 +25,9 @@ public class Day3 extends AbstractPuzzle {
 
 		private Route(int deltaX, int deltaY) {
 			try {
-				for (int i = 0; i < input.size() - 1; i++) {
+				for (int i = 0; i < input.size(); i++) 
 					if (isTree(deltaX, deltaY))
 						trees++;
-				}
 			} catch (IndexOutOfBoundsException e) {}
 		}
 
