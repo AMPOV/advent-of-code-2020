@@ -2,11 +2,11 @@ package org.ampov.aoc.puzzle;
 
 import java.util.List;
 
-public class Day3 extends AbstractPuzzle {
+public class Puzzle3 extends AbstractPuzzle {
 
 	private List<String> input = inputFile.getLines();
 
-	public Day3() {
+	public Puzzle3() {
 		long trees = new Route(3, 1).trees;
 		
 		solutionPart1 = trees;

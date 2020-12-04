@@ -8,12 +8,12 @@ interface PasswordPolicy {
 	boolean validate(String record);
 }
 
-public class Day2 extends AbstractPuzzle {
+public class Puzzle2 extends AbstractPuzzle {
 	
 	private List<String> input = inputFile.getLines();
 	private Pattern pattern = Pattern.compile("(\\d+)-(\\d+) (\\w): (\\w+)");
 	
-	public Day2() {
+	public Puzzle2() {
 		solutionPart1 = countValid(new PasswordPolicy1());
 		solutionPart2 = countValid(new PasswordPolicy2());
 	}

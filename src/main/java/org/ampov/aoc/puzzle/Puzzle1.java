@@ -3,9 +3,9 @@ package org.ampov.aoc.puzzle;
 import java.util.Comparator;
 import java.util.List;
 
-public class Day1 extends AbstractPuzzle {
+public class Puzzle1 extends AbstractPuzzle {
 	
-	public Day1() {
+	public Puzzle1() {
 		List<Integer> input = inputFile.getAsIntegers();
 		input.sort(Comparator.naturalOrder());
 		solutionPart1 = getProduct(input, 0);
