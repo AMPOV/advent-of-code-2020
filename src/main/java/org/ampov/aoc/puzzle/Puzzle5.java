@@ -21,9 +21,9 @@ public class Puzzle5 extends AbstractPuzzle {
 	public Puzzle5() {
 		solutionPart1 = seats.last();
 		solutionPart2 = IntStream.range(seats.first(), seats.last())
-				.boxed()
-				.filter(i -> !seats.contains(i))
-				.collect(Collectors.toCollection(TreeSet::new))
-				.first();
+			.boxed()
+			.filter(i -> !seats.contains(i))
+			.collect(Collectors.toCollection(TreeSet::new))
+			.first();
 	}
 }
