@@ -9,6 +9,7 @@ import org.ampov.aoc.puzzle.Puzzle1;
 import org.ampov.aoc.puzzle.Puzzle2;
 import org.ampov.aoc.puzzle.Puzzle3;
 import org.ampov.aoc.puzzle.Puzzle4;
+import org.ampov.aoc.puzzle.Puzzle5;
 
 public class AdventOfCode {
 	
@@ -23,6 +24,7 @@ public class AdventOfCode {
 		puzzles.add(new Puzzle2());
 		puzzles.add(new Puzzle3());
 		puzzles.add(new Puzzle4());
+		puzzles.add(new Puzzle5());
 	}
 	
 	private void printSolutions() {
