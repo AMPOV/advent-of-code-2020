@@ -13,35 +13,34 @@ public class Puzzle4 extends AbstractPuzzle {
 	private String input = inputFile.getContent();
 	private List<String> required = Arrays.asList("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"); 
 	private Map<String, Predicate<String>> predicateMap = getPredicates();
-	
+
 	public Puzzle4() {
 		Pattern pattern = Pattern.compile("(\\w{3}):([^\\s]+)");
-		
-	    int valid = 0;
-	    int validStrict = 0;
+		int valid = 0;
+		int validStrict = 0;
 		String[] passports = input.split("\\n\\n");
-		
+
 		for (int i = 0; i < passports.length; i++) {
-		    Map<String, String> passport = new HashMap<>();
+			Map<String, String> passport = new HashMap<>();
 			Matcher matcher = pattern.matcher(passports[i]);
 			int validFieldCount = 0;
-		    while (matcher.find()) {
-		    	passport.put(matcher.group(1), matcher.group(2));
-		    	try {
-			    	if (predicateMap.get(matcher.group(1)).test(matcher.group(2)))	
-			    		validFieldCount++;
-		    	} catch (Exception e) {}
-		    }
-		    if (passport.keySet().containsAll(required)) {
-		    	valid++;
-		    	if (validFieldCount >= 7)
-		    		validStrict++;
-		    }
+			while (matcher.find()) {
+				passport.put(matcher.group(1), matcher.group(2));
+				try {
+					if (predicateMap.get(matcher.group(1)).test(matcher.group(2)))	
+						validFieldCount++;
+				} catch (Exception e) {}
+			}
+			if (passport.keySet().containsAll(required)) {
+				valid++;
+				if (validFieldCount >= 7)
+					validStrict++;
+			}
 		}
 		solutionPart1 = valid;
 		solutionPart2 = validStrict;
 	}
-	
+
 	private Map<String, Predicate<String>> getPredicates() {
 		Map<String, Predicate<String>> predicates = new HashMap<>();
 		predicates.put("byr", v -> Integer.parseInt(v) >= 1920 && Integer.parseInt(v) <= 2002);
