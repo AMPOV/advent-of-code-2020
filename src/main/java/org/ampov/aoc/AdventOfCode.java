@@ -11,6 +11,7 @@ import org.ampov.aoc.puzzle.Puzzle3;
 import org.ampov.aoc.puzzle.Puzzle4;
 import org.ampov.aoc.puzzle.Puzzle5;
 import org.ampov.aoc.puzzle.Puzzle6;
+import org.ampov.aoc.puzzle.Puzzle7;
 
 public class AdventOfCode {
 
@@ -27,6 +28,7 @@ public class AdventOfCode {
 		add(new Puzzle4());
 		add(new Puzzle5());
 		add(new Puzzle6());
+		add(new Puzzle7());
 	}
 
 	private AdventOfCode add(AbstractPuzzle puzzle) {
